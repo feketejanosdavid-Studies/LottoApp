@@ -1,0 +1,56 @@
+﻿<Window x:Class="LottoApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LottoApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="850" Width="680"
+        Background="Transparent"
+        WindowStyle="None"
+        AllowsTransparency="True">
+    <Border Background="#DAD3BE" CornerRadius="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Margin="10,10" Background="#379237" x:Name="Title" Grid.ColumnSpan="2" Width="650" MouseLeftButtonDown="Title_MouseLeftButtonDown">
+                <TextBlock Text="Lottó"
+                           Foreground="white"
+                           HorizontalAlignment="Center"
+                           FontSize="30"
+                           FontWeight="Bold"
+                           ></TextBlock>
+            </StackPanel>
+
+            <WrapPanel x:Name="TippPanel" Grid.Row="1" Margin="10,0,10,10" Background="#82CD47" HorizontalAlignment="Center">
+                
+            </WrapPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <Button x:Name="sorsol" Click="sorsol_Click" Width="150" Content="Sorsolás" FontSize="18" Margin="10" Background="#54B435" Foreground="White"></Button>
+
+                <Border Height="200"
+                        Width="170"
+                        CornerRadius="20"
+                        Background="#54B435">
+                    <StackPanel>
+                        <TextBlock TextWrapping="Wrap" Text="Tippek" x:Name="Tippek" Foreground="white" HorizontalAlignment="Center" FontSize="16" Margin="0,10">
+                        </TextBlock>
+                        <TextBlock Text="Sorsolás eredménye" Foreground="white" HorizontalAlignment="Center" FontSize="16" Margin="0,10">
+                        </TextBlock>
+                        <TextBlock Text="Sorsolás eredménye" Foreground="white" HorizontalAlignment="Center" FontSize="16" Margin="0,10">
+                        </TextBlock>
+                    </StackPanel>
+                </Border>
+                <Button x:Name="closeButton" Click="closeButton_Click" Width="150" Content="Bezárás" FontSize="18" Margin="10" Background="#54B435" Foreground="White"></Button>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
