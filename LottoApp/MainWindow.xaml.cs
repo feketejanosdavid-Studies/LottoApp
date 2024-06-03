@@ -87,7 +87,19 @@ namespace LottoApp
         }
         private void sorsol_Click(object sender, RoutedEventArgs e)
         {
+            if (Bet.Count == 5)
+            {
+                HashSet<int> sorsolt = new HashSet<int>();
+                Random rnd = new Random();
+                do
+                {
+                    sorsolt.Add(rnd.Next(1, 91));
+                } while (sorsolt.Count < 5);
 
+                sorsolas.Text = "Sorsolás eredménye:\n" + String.Join(" ", sorsolt);
+
+                eredmeny.Text = "Eltalált számok:\n" + String.Join(" ", Bet.Intersect(sorsolt));
+            }
         }
     }
 }

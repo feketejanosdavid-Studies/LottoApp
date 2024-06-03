@@ -28,7 +28,7 @@
 
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsChecked" Value="True">
-                                <Setter Property="Fill" Value="darkgray" TargetName="Ellipse"></Setter>
+                                <Setter Property="Fill" Value="darkgreen" TargetName="Ellipse"></Setter>
                             </Trigger>
 
                             <Trigger Property="IsEnabled" Value="False">
