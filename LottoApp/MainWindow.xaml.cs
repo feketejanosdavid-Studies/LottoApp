@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LottoApp.Data;
 
 namespace LottoApp
 {
@@ -22,10 +23,12 @@ namespace LottoApp
     {
 
         HashSet<int> Bet;
+        Context db;
         public MainWindow()
         {
             InitializeComponent();
             Bet = new HashSet<int>();
+            db = new Context();
             DrawCheckBox();
         }
 
@@ -99,6 +102,9 @@ namespace LottoApp
                 sorsolas.Text = "Sorsolás eredménye:\n" + String.Join(" ", sorsolt);
 
                 eredmeny.Text = "Eltalált számok:\n" + String.Join(" ", Bet.Intersect(sorsolt));
+
+                db.Sorsolasok.Add(new Models.Sorsolas(sorsolt));
+                db.SaveChanges();
             }
         }
     }
